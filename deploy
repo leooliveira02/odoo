@@ -1,0 +1,29 @@
+# Installing ODOO community on runcloud/VPS
+
+
+## Setup	
+* add port `8069` in security access 
+* `deploy` and `restart` the server
+* create sudoer user on `ubuntu`
+ * adduser `<user>`
+ * `usermod -aG sudo <user>` - make the user as sudoer
+
+ 
+## Install POSTGRES
+ * `sudo apt-get update`
+ * `sudo apt-get install postgresql postgresql-contrib`
+
+ 
+## Install ODOO
+
+* `wget -O - https://nightly.odoo.com/odoo.key | apt-key add -`
+* `echo "deb http://nightly.odoo.com/13.0/nightly/deb/ ./" >> /etc/apt/sources.list`
+* `apt-get update && apt-get install odoo`
+
+
+## Run ODOO
+* `sudo service odoo restart`
+* Now visit `http://<ip>:8069`
+
+
+<hr />
